@@ -1,1 +1,29 @@
+2491. Divide Players Into Teams of Equal Skill - Leetcode
 
+Give problem is to divide the array into 2 parts in that array we should form the equal groups that means (n/2) for 6 sized array if divide na 6 / 2 == 3 therefore -> 3 groups
+
+       int n = skill.size();
+        unordered_map<int,int>mp;
+        long long ans = 0;
+        int sum = 0;
+        for(int i=0;i<n;i++) sum += skill[i];
+
+        int x = sum/(n/2);
+        if(sum%(n/2) != 0) return -1;
+
+        for(int i=0;i<n;i++)
+        {
+            int temp = abs(x - skill[i]);
+            if(mp[temp]>0){
+                ans += skill[i] * temp;
+                mp[temp]--;
+            }
+            else mp[skill[i]]++;
+        }
+
+        for(auto p:mp)
+        {
+            if(p.second!=0) return -1;
+        }
+
+        return ans;
