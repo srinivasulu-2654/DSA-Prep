@@ -1,4 +1,4 @@
-We have to search the target in the sorted rotated array
+We have to search the target in the sorted rotated array for example arr[] = {7,8,9,1,2,3,4,5,6} target = 1
 
 first check l < mid or mid < h (which position is sorted go to that side left or right)
 
