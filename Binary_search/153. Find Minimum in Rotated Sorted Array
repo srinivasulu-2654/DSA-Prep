@@ -1,0 +1,26 @@
+We have to find minimum sorted rotated array
+
+arr[] = {7,8,1,2,3,4,5,6}
+
+So steps we have to do is:
+    first we have to eliminate half of the array for that 
+    check arr[l]<mid  then eliminate right half and update the answer = arr[l];
+    check if arr[mid] < arr[h] then eliminate left  half and update the answer = arr[mid];
+
+while(l<=h)
+        {
+           int mid = (l+h)/2;
+           if(nums[l]<=nums[mid])
+           {
+              ans = min(ans,nums[l]);
+              l = mid + 1;
+           }
+
+           else {
+              ans = min(ans,nums[mid]);
+              h = mid - 1;
+           }
+        }
+
+        return ans;
+}
