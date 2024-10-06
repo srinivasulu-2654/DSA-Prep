@@ -1,0 +1,39 @@
+We have to find the Square root of a number
+
+Naive approach is :
+
+  long long int floorSqrt(long long int n) {
+        // Your code goes here
+        
+        long long ans = -1;
+        for(int i=1;i<=n;i++)
+        {
+            if(i * i <= n) 
+             ans = i;
+            else break;
+        }
+        
+        return ans;
+
+Optimal approach :
+
+        if(n==0 || n==1) return n;
+        
+        int l = 1, h = n;
+        
+        long long ans = 1;
+        
+        while(l<=h)
+        {
+            long long mid = (l+h)/2;
+            
+            if(mid * mid <= n)
+            {
+                ans = mid;
+                l = mid + 1;
+                
+            }
+            else h = mid - 1;
+        }
+        
+        return ans;
