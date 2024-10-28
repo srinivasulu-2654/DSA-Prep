@@ -1,0 +1,13 @@
+h(x) = x % 10
+
+the {key,value} pairs can be stored in hashmap as h(x) = x % 10
+
+[10,20,30,40,50,60,70,80,91,72] 
+
+if there is same key for some values then to search for certain element it will take around O(n) complexity
+***** search, delete, insert all it will take around O(1) in best and O(n) in worst
+
+** will solve problems on 
+  -> sliding window
+  -> prefix sum
+  -
