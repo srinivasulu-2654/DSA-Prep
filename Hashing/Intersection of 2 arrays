@@ -1,0 +1,17 @@
+set<int>st;
+        vector<int>ans;
+        int n = nums1.size();
+        for(int i =0;i<n;i++)
+        {
+            st.insert(nums1[i]);
+        }
+
+        for(auto it:nums2)
+        {
+            if(st.find(it) != st.end()){
+                ans.push_back(it);
+                st.erase(it);
+            }
+        }
+
+        return ans;
