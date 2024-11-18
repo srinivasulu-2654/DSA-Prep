@@ -1,0 +1,8 @@
+For this there is one simple logic that's it problem can be solved
+
+atmost na - <=k
+atleast na - >=k
+
+for this we have to subtract from total - atmost(k) it will get the answer of atleast(k)
+
+Refer Day - 6 from 1:13:06
