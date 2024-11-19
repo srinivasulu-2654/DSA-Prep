@@ -1,0 +1,40 @@
+https://www.geeksforgeeks.org/problems/equal-0-1-and-23208/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+
+ long long getSubstringWithEqual012(string str) {
+        // code here
+        int n = str.size();
+        long long cnt = 0;
+        int z0 = 0, z1 = 0, z2 = 0;
+        unordered_map<string,int>mp;
+        
+        mp["0#0"] = 1;
+        
+        for(int i=0;i<n;i++)
+        {
+            if(str[i]=='0')
+            {
+                z0++;
+            }
+            else if(str[i]=='1')
+            {
+                z1++;
+            }
+            else if(str[i]=='2')
+            {
+                z2++;
+            }
+            
+            string key = to_string(z1-z0) + "#" + to_string(z2-z1);
+            
+            if(mp.find(key) != mp.end())
+            {
+                cnt += mp[key];
+                mp[key]++;
+            }
+            else{
+                mp[key] = 1;
+            }
+        }
+        
+        return cnt;
+    }
