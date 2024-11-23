@@ -1,0 +1,30 @@
+https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1
+
+
+ int longSubarrWthSumDivByK(vector<int>& nums, int k) {
+        // Complete the function
+        
+        int n=nums.size();
+        int maxi = 0;
+        unordered_map<int,int>mp;
+        int sum = 0;
+        mp[sum] = -1;
+
+        for(int i=0;i<n;i++)
+        {
+            sum += nums[i];
+            int currRem = ((sum % k)+k)%k; // to handle negative integers
+            if(mp.find(currRem) != mp.end())
+            {
+               maxi = max(maxi,i-mp[currRem]);
+                // mp[currRem]++;
+            }
+
+
+            else{
+                mp[currRem] = i;
+            }
+        }
+
+        return maxi;
+    }
