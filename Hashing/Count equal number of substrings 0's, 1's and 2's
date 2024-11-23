@@ -7,7 +7,7 @@ https://www.geeksforgeeks.org/problems/equal-0-1-and-23208/1?itm_source=geeksfor
         int z0 = 0, z1 = 0, z2 = 0;
         unordered_map<string,int>mp;
         
-        mp["0#0"] = 1;
+        mp["0#0"] = 1;  // here if we are adding the basic because when we take the string str = "012" then it will give wrong answer if we won't take like this
         
         for(int i=0;i<n;i++)
         {
