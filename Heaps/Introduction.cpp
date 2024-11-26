@@ -1,8 +1,8 @@
 If there should be present of k and find smallest/largest then simply it is Heap
 
 Two types of Heap :
-  1) Min heap   k + largest then use Min heap
-  2) Max heap   k + smallest then use Max heap
+  1) Min heap   k + largest + greatest + top  then use Min heap
+  2) Max heap   k + smallest + lowest + closest  then use Max heap
 
 Kth Largest then - use Min heap  (smallest element will store on top and largest will store on bottom of min heap)
 
