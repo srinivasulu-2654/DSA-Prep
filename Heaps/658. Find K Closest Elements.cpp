@@ -6,7 +6,7 @@ public:
     vector<int> findClosestElements(vector<int>& arr, int k, int x) {
         
         int n = arr.size();
-        priority_queue<pair<int,int>>maxi;
+        priority_queue<pair<int,int>>maxi;   // we are using maxi heap because we have to eliminate the maximum diff of (nums[i] - x)
         vector<int>ans;
 
         for(int i=0;i<n;i++)
