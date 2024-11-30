@@ -14,3 +14,9 @@ Identification :
 
 Important points to note :
   ->First write in Recursive -> memoize -> top-down
+
+
+  Striver :
+1) Try to represent the problem in terms of indexes
+2) Do alla possible stuff on that according to the prblm statement
+3) sum of all steps or min or max
