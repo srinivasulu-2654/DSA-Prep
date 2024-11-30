@@ -24,3 +24,6 @@ max profit      -  Optimal
 
 
 DP - Recursion + Storage
+
+
+While writig the base condition please try to think of the smallest valid input 
