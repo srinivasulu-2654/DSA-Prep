@@ -1,0 +1,28 @@
+https://www.geeksforgeeks.org/problems/minimal-cost/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=minimal-cost
+
+   int f(vector<int>&arr,int k,int ind,vector<int>&dp)
+    {
+         if(ind<=0) return 0;
+         
+         int minJumps = INT_MAX;
+         
+         if(dp[ind] != -1) return dp[ind];
+         
+         for(int j=1;j<=k;j++){
+            
+            int jumps; 
+             
+           if(ind-j>=0)  jumps = f(arr,k,ind-j,dp) + abs(arr[ind] - arr[ind-j]);
+             
+             minJumps = min(minJumps,jumps);
+         }
+         
+         return dp[ind] =  minJumps;
+    }
+    int minimizeCost(int k, vector<int>& arr) {
+        // Code here
+        int n = arr.size();
+        vector<int>dp(n+1,-1);
+        // int n = arr.size();
+        return f(arr,k,n-1,dp);
+    }
