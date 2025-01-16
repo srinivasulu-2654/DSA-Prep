@@ -31,3 +31,9 @@ The AND (&) operation clears the i-th bit.
 Example:
 If x = 01010011 and you want to unset the 0th bit, the result will be 01010010. */
 
+How to check i-th bit is set or not?
+
+  x = 010101 to check this we have x<<2 then it will become 000100
+
+and perform and(&) operation after that if it will not equal to 0 then the i-th bit set
+
