@@ -3,8 +3,8 @@ This is a unique pattern that we have to notice
 
 to find single ele there are many cases :
 
-   1.all the eles stored in (even,odd) then eliminate left half
-   2. if all the eles stored in (odd,even) then eliminate right half
+   1.all the eles stored in (even,odd) then eliminate left half -> then ele is on right half
+   2. if all the eles stored in (odd,even) then eliminate right half -> then ele is on left half
 Cases we have to check are :
    mid % 2 == 1 && nums[mid] == nums[mid-1] || mid % 2 == 0 && nums[mid] == nums[mid+1] l = mid + 1
 
