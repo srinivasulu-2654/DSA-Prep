@@ -1,5 +1,7 @@
 We have to find the Square root of a number
 
+Here at the end of the answer the high wil point to the answer and low will point to the elimination point that is next to high pointer
+
 Naive approach is :
 
   long long int floorSqrt(long long int n) {
