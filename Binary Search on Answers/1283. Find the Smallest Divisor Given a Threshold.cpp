@@ -40,3 +40,5 @@ public:
         return ans;
     }
 };
+
+TC : O(log(maxi) x O(n) + O(n) ) 
