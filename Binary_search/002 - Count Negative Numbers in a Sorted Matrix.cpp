@@ -37,4 +37,30 @@ public:
 
 TC: n * log m
 SC: O(1)
+
+// so the solution should be like O(n+m)
+
+Appraoch 2:
+
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& grid) {
+        
+        int n = grid.size();
+        int m = grid[0].size();
+        int r = n-1;
+        int c = 0;
+        int cnt = 0;
+        while(r>=0 && c<m)
+        {
+            if(grid[r][c]<0)
+            {
+                r--;
+                cnt += m - c;
+            }
+            else c++;
+        }
+        return cnt;
+    }
+};
   
