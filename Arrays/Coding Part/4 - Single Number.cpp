@@ -10,3 +10,9 @@ public:
         return xorr;
     }
 };
+
+
+a ^ b ^ a = (a ^ a) ^ b = 0 ^ b = b
+(1 ^ 1) ^ (2 ^ 2) ^ 4
+
+    Order is not a problem here 
