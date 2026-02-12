@@ -1,3 +1,6 @@
+
+// This is kind of prefixSum
+
 For this problem (kadanes algorithm) we have to cover lot of corner cases
 
 for example if we don't intialize prefixsum = 0 in map as 
