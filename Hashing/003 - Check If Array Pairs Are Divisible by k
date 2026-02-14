@@ -1,0 +1,69 @@
+https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
+
+Normal is approach is very simple of bruete force
+
+--------------------------------------------------------
+
+Codestorywith MIK:
+
+Steps:
+-> check for negative values becuase it will be there like this 
+   -5%7 => normal we will tell -5 but it is wrong becuase it wont satisfy this equation
+    Dividend = divosior * Q + R
+    -5 = 7 * -1 + 2 => -5
+    now 2 is the correct remainder
+
+-> second thing is :
+
+   a % k = r1
+   b % k = r2
+   now r1 + r2 should be compulsory equal to k
+
+-> third thing is traverse the arr and store the reminder which is divisible by (nums[i] % K) 
+   store the remainder in the freq array of some map
+
+-> fourth thing we should traverse like this :
+   for example if K = 7 then the remainder values that stored in freq values are 0,1,2,3,4,5,6
+    becuase the remainder will come until k-1 only
+
+-> and also while traversing the freq we are checking for two remainders so if we check 2 count then if again 7-2 = 5 no need to check again 5 frequency
+
+Corner case:
+[10,15,20,30] k = 5 now freq[rem] = 4 so (freq[0] % 2 == 0) I mean 4 % 2 == 0 then return true or else false;
+
+
+
+Code :
+
+class Solution {
+public:
+    bool canArrange(vector<int>& arr, int k) {
+        
+        int n = arr.size();
+        vector<int>freq(k,0); // remainders will be 0,1,2,......k-1
+        for(int i=0;i<n;i++)
+        {
+            int rem = ((arr[i]%k) + k) % k; // to handle -ve numbers
+            freq[rem]++;
+        }
+
+        if(freq[0] % 2 != 0) return false; // [10,15,20,30] k = 5 all will become freq[0]=4
+
+        // now if we check for 1 value no need to check for other value
+        // becuase we are focusing on the pair count should be same
+        // hence traversing till <=k/2 is enough
+
+        for(int rem=1;rem<=k/2;rem++)
+        {
+            int anotherRem = k - rem;
+            if(freq[anotherRem] != freq[rem]) return false;
+        }
+
+        return true;
+
+    }
+};
+
+-----------------------------------------------------------
+
+Approach : swag wala developer (use unordered_map)
