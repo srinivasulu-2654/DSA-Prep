@@ -1,6 +1,6 @@
 https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
 
-Normal is approach is very simple of bruete force
+/* Normal is approach is very simple of bruete force
 
 --------------------------------------------------------
 
@@ -29,7 +29,7 @@ Steps:
 -> and also while traversing the freq we are checking for two remainders so if we check 2 count then if again 7-2 = 5 no need to check again 5 frequency
 
 Corner case:
-[10,15,20,30] k = 5 now freq[rem] = 4 so (freq[0] % 2 == 0) I mean 4 % 2 == 0 then return true or else false;
+[10,15,20,30] k = 5 now freq[rem] = 4 so (freq[0] % 2 == 0) I mean 4 % 2 == 0 then return true or else false; */
 
 
 
