@@ -1,3 +1,43 @@
+// there is no question link for this
+
+Bruete force approach : 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int substrings_having_atmost_k_unique_characters(string &s,int k)
+{
+    int n = s.size();
+    int cnt = 0;
+    for(int i=0;i<n;i++)
+    {
+        unordered_map<char,int>mp;
+        for(int j=i;j<n;j++)
+        {
+             mp[s[j]]++;
+            
+            if(mp.size()>k)
+            {
+                break;
+            }
+            
+            cnt++;
+        }
+    }
+    
+    return cnt;
+}
+
+int main()
+{
+    string str = "aabcdb";
+    int k = 2;
+    cout<<substrings_having_atmost_k_unique_characters(str,k);
+    return 0;
+}
+
+Optimal approach:
+
 #include<bits/stdc++.h>
 using namespace std;
 
