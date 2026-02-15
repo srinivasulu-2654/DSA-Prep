@@ -1,5 +1,12 @@
 // there is no question link for this
 
+so here for count the number of substrings also we did sometimes like this:
+    cnt++;
+    cnt += j-i+1
+
+    1st logic is for when we follow bruete force and
+    2nd logic is for when we follow optimal approach
+
 Bruete force approach : 
 
 #include<bits/stdc++.h>
