@@ -9,56 +9,40 @@ Refer Day - 6 from 1:13:06
 
 https://www.lintcode.com/problem/1375/?fromId=349&_from=collection
 
+formula is we have to remove atmost k substring  from total substrings and k = k-1 (because exactly k we already taking in atleast right check number line once)
 
-class Solution {
-public:
-    /**
-     * @param s: a string
-     * @param k: an integer
-     * @return: the number of substrings there are that contain at least k distinct characters
-     */
+#include<bits/stdc++.h>
+using namespace std;
 
-     long long atmostk(string &s,int k)
-     {
-         int n = s.size();
-    long long cnt = 0;
+int substrings_having_atleast_k_unique_characters(string &s,int k)
+{
+    int n = s.size();
+    int cnt = 0;
+    k -= 1; // becuase we have to elimnate the exact k substrings (i mean it will come already in atleast right)
     unordered_map<char,int>mp;
     int i=0,j=0;
-    int distinct = 0;
     while(j<n)
     {
+        mp[s[j]]++;
         
-        if(mp.find(s[j])!=mp.end()) 
-        {
-            mp[s[j]]++;
-        }
-        else{
-            mp[s[j]] = 1;
-            distinct++;
-        }
-        
-        while(i<=j && distinct > k)
+        while(mp.size()>k)
         {
             mp[s[i]]--;
-            if(mp[s[i]] == 0)
-            {
-                distinct--;
-                mp.erase(s[i]);
-                
-            }
+            if(mp[s[i]]==0) mp.erase(s[i]);
             i++;
         }
         
         cnt += j-i+1;
         j++;
-         
     }
     
-    return cnt;
-     }
-    long long kDistinctCharacters(string &s, int k) {
-        // Write your code here
-        long long n = s.size();
-        return n*(n+1)/2 - atmostk(s,k-1);
-    }
-};
+    return n*(n+1)/2 - cnt;
+}
+
+int main()
+{
+    string str = "abcabcabcabc";
+    int k = 3;
+    cout<<substrings_having_atleast_k_unique_characters(str,k);
+    return 0;
+}
