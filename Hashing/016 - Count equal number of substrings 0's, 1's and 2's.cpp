@@ -1,5 +1,9 @@
 https://www.geeksforgeeks.org/problems/equal-0-1-and-23208/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
 
+// Here this problem can not be able to do by sliding window and all becuase 
+// we have to calculate equal number of 0's, 1's and 2's
+// so this is like prefixSum
+
  long long getSubstringWithEqual012(string str) {
         // code here
         int n = str.size();
