@@ -1,3 +1,7 @@
+https://leetcode.com/problems/subarray-sum-equals-k/description/
+
+Prefix sum 
+
 Refer Day 7 1:31
 
 class Solution {
