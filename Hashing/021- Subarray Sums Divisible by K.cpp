@@ -2,6 +2,9 @@ https://leetcode.com/problems/subarray-sums-divisible-by-k/description/
 
 Refer Day 8 29:03
 
+    TC : O(n)
+    SC : O(k)
+
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
