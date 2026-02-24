@@ -43,6 +43,6 @@ int main()
 {
     string str = "abcabcabcabc";
     int k = 3;
-    cout<<substrings_having_atleast_k_unique_characters(str,k);
+    cout<<substrings_having_atleast_k_unique_characters(str,k-1);
     return 0;
 }
