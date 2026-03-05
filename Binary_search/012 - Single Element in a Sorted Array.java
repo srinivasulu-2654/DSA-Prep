@@ -1,5 +1,34 @@
 Should solve this in O(log n) and O(1)
 
+  This is a unique pattern that we have to notice 
+
+
+to find single ele there are many cases :
+
+   1.all the eles stored in (even,odd) then I am on the  left half -> then element is on right half so eliminate left half
+   2. if all the eles stored in (odd,even) then I am on the  right half -> then element is on left half so eliminate right half
+Cases we have to check are :
+   mid % 2 == 1 && nums[mid] == nums[mid-1] || mid % 2 == 0 && nums[mid] == nums[mid+1] l = mid + 1
+
+int n = nums.size();
+        if(n==1) return nums[0];
+        if(nums[0] != nums[1]) return nums[0];
+        if(nums[n-1] != nums[n-2]) return nums[n-1];
+
+        int l = 1,r=n-2;
+        while(l<=r)
+        {
+           int mid = (l+r)/2;
+           if(nums[mid] != nums[mid-1] && nums[mid] != nums[mid+1]) return nums[mid];
+           if((mid%2==1 && nums[mid] == nums[mid-1]) ||
+           (mid%2==0 && nums[mid] == nums[mid+1])) l = mid + 1;
+           else r = mid - 1;
+        }
+
+        return -1;
+
+    }
+
   // Approach 1:
   use hasing like
   
