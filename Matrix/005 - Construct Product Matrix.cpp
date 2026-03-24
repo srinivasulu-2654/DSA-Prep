@@ -40,6 +40,10 @@ Optimal Approach :
   -> at a normal point [1 2 3 4 5] at point of 3 except 3 reaming should multiply na 
   -> will multiply left and right side of ele's of 3
   -> so for that we can take prefix and sufix array's and do just product of left side and right side ele's
+  -> so here instead of maintaing the prefix and suffix matrix we can first calculate the suffix matrix firstly and then
+  -> we can calculate the prefix in air itself:
+     suffix[i] = suffix[i] * prefix
+     prefix = prefix*arr[i];
 */
 
 class Solution {
