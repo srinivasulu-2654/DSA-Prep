@@ -1,5 +1,7 @@
 https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
 
+Subarray Sum Equals K -> same this model but need to return count
+
 Code 1 :
 
 This code only works for all positive integers example: vector<int> nums = {10, 5, 2, 7, 1, 9};
