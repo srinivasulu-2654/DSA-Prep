@@ -18,7 +18,6 @@ int substrings_having_atleast_k_unique_characters(string &s,int k)
 {
     int n = s.size();
     int cnt = 0;
-    k -= 1; // becuase we have to elimnate the exact k substrings (i mean it will come already in atleast right)
     unordered_map<char,int>mp;
     int i=0,j=0;
     while(j<n)
