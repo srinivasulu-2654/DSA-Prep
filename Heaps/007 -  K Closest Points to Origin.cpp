@@ -1,7 +1,10 @@
 https://leetcode.com/problems/k-closest-points-to-origin/description/
 
-***** This is a very imp question to tackle new challenge ******
-
+/* 
+    ***** This is a very imp question to tackle new challenge ******
+    -> here we want to return the closest points to origin i mean (0,0)
+    -> sqrt((x1-x2)^2 + (y1-y2)^2) any way (x1,y1) => (0,0) sqrt(x1 sqaure + x2 square) 
+*/
 
 class Solution {
 public:
