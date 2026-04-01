@@ -1,5 +1,22 @@
 https://www.geeksforgeeks.org/problems/sorting-elements-of-an-array-by-frequency/0
 
+/*
+    [9,2,1,1,1,2,4,4,5]  
+        9 - 1
+        2 - 2
+        1 - 3
+        4 - 2
+        5 - 1
+        
+        so here if we take maxi na it will store first {2,4} and then {2,2} -> but we want 2 first and then 4 
+        so here max heap will fail if we take min heap will check now:
+        9 - -1
+        2 - -2
+        1 - -3    so first will store {-3,1} then {-2,2} and then {-2,4} now will get correct answer
+        4 - -2
+        5 - -1
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
