@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    int kthSmallest(vector<int> &arr, int k) {
+        // code here
+        int n = arr.size();
+        priority_queue<int>maxi;
+        for(int i=0;i<n;i++)
+        {
+            maxi.push(arr[i]);
+            while(maxi.size()>k)
+            {
+                maxi.pop();
+            }
+        }
+        
+        return maxi.top();
+    }
+};
