@@ -9,6 +9,31 @@ https://leetcode.com/problems/k-closest-points-to-origin/description/
 class Solution {
 public:
     vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        int n = points.size();
+        priority_queue<pair<int,pair<int,int>>>maxi;
+        for(int i=0;i<n;i++)
+        {
+            int x = points[i][0];
+            int y = points[i][1];
+            int val = x*x + y*y;
+            maxi.push({val,{x,y}});
+
+            if(maxi.size()>k) maxi.pop();
+        }
+        vector<vector<int>>ans;
+        while(maxi.size()!=0)
+        {
+            auto it = maxi.top().second;
+            ans.push_back({it.first,it.second});
+            maxi.pop();
+        }
+        return ans;
+    }
+};
+
+class Solution {
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
         
         int n = points.size();
         // int n = points[0].size();
