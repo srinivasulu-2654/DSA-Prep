@@ -1,5 +1,12 @@
 https://leetcode.com/problems/find-k-closest-elements/
 
+/*
+    -> TC : maxi.push({abs(arr[i] - x),arr[i]}); these kind of operations will take O(logK) -> O(nlogk)
+    -> traversing O(k * logk)
+    -> sorting O(k * logk)
+    -> total => O(nlogk) + 2 * O(k * logk) ~ O(n log k)
+*/
+
 
 class Solution {
 public:
@@ -30,3 +37,4 @@ public:
        return ans;
     }
 };
+
