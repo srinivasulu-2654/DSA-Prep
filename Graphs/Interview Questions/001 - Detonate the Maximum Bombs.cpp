@@ -73,3 +73,71 @@ public:
         return res;
     }
 };
+
+BFS :
+
+class Solution {
+public:
+    typedef long long ll;
+    int bfs(int u,unordered_map<int,vector<int>>&adj)
+    {
+        unordered_set<int>vis;
+        queue<int>q;
+        q.push(u);
+        vis.insert(u);
+        while(!q.empty())
+        {
+            int temp = q.front();
+            q.pop();
+            for(int v:adj[temp])
+            {
+                if(vis.find(v) == vis.end())
+                {
+                    vis.insert(v);
+                    q.push(v);
+                }
+            }
+        }
+
+        return vis.size();
+    }
+
+    int maximumDetonation(vector<vector<int>>& bombs) {
+        
+        int n = bombs.size();
+        unordered_map<int,vector<int>>adj;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i==j) continue;
+
+                ll x1 = bombs[i][0];
+                ll y1 = bombs[i][1];
+                ll r1 = bombs[i][2];
+
+                ll x2 = bombs[j][0];
+                ll y2 = bombs[j][1];
+                ll r2 = bombs[j][2];
+
+                ll distance = (x2-x1) * (x2-x1) + (y2-y1) * (y2-y1);
+                if(r1*r1 >= distance)
+                {
+                    adj[i].push_back(j);
+                }
+
+            }
+        }
+
+        int res = 0;
+        unordered_set<int>vis;
+        for(int i=0;i<n;i++)
+        {
+            int cnt = bfs(i,adj);
+            res = max(cnt,res);
+            vis.clear(); // should clear for each and eve
+        }
+
+        return res;
+    }
+};
