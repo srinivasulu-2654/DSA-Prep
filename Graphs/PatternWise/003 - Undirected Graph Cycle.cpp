@@ -6,18 +6,15 @@
 class Solution {
   public:
   
-    bool checkCycle(vector<vector<int>>& adj,int u,vector<bool>&vis,int parent)
+    bool dfs(int node,int parent,vector<vector<int>>&adj,vector<bool>&vis)
     {
-        vis[u] = true;
-        for(int v:adj[u])
+        vis[node] = true;
+        for(auto it:adj[node])
         {
-            if(v==parent) continue;
-            
-            if(vis[v]) return true;
-            
-            if(checkCycle(adj,v,vis,u)){
-                return true;
+            if(!vis[it]){
+                if(dfs(it,node,adj,vis) == true) return true;
             }
+            else if(it != parent) return true;
         }
         
         return false;
@@ -27,6 +24,7 @@ class Solution {
         // Code here
         
         vector<vector<int>>adj(V);
+        vector<bool>vis(V,false);
         for(auto it:edges)
         {
             int u = it[0];
@@ -36,14 +34,15 @@ class Solution {
             adj[v].push_back(u);
         }
         
-        vector<bool>vis(V,false);
         for(int i=0;i<V;i++)
         {
-            if(!vis[i] && checkCycle(adj,i,vis,-1)){
-                return true;
+            if(!vis[i])
+            {
+                if(dfs(i,-1,adj,vis) == true) return true;
             }
         }
         
         return false;
+        
     }
 };
