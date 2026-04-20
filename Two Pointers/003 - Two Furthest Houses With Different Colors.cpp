@@ -3,6 +3,9 @@
   -> so here bruete force just traverse with 2 for loops and then coming to optimal appraoch
   -> just for the 1st check from i = 0 colors[i] == colors[n-1] like this check i++ update maxi 
   -> same like this check i = n-1 colors[i] == colors[0] and update maxi 
+
+  Example : [1,1,1,1,1,1,1,1,1,2,2,1,1]
+  
 */
 
 
