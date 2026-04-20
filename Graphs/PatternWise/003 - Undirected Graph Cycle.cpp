@@ -3,6 +3,11 @@
   -> Here everything is same as dfs traversals just we are maintaining the parent of the current node becuase do not explore this again
 */
 
+
+Total work = visiting all nodes + checking all edges
+           = O(V)  +  O(E)
+           = O(V + E)
+
 class Solution {
   public:
   
