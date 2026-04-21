@@ -12,4 +12,6 @@
       int parent = find(i);
       groupFreq[parent][source[i]]++;
   -> hamming distance = 0;
+
+  Please revise this question
 */
