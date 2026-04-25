@@ -1,4 +1,6 @@
-https://www.geeksforgeeks.org/problems/distance-of-nearest-cell-having-1-1587115620/1
+/* https://www.geeksforgeeks.org/problems/distance-of-nearest-cell-having-1-1587115620/1
+
+-> Same as leetcode No : 542 */
 
 class Solution {
   public:
