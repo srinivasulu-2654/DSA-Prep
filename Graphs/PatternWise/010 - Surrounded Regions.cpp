@@ -1,6 +1,7 @@
 https://leetcode.com/problems/surrounded-regions/description/
 
 /*
+    -> Similar like "Rotten Oranges"
     -> Here the main logic is we have to set 'O' to 'X' with all the borders
     -> so instead exploring all the inside things we have to explore only it's boundaries
     -> and then just traverse if vis[i][j] == 0 then do this grid[i][j] = 'X'
