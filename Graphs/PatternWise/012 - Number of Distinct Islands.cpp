@@ -16,6 +16,11 @@
   => that's it we can get the number of distince islands
   => so here the only thing is wheather u explore bfs or dfs just go in same pattern
   => so here we are storing the shape of the island 
+
+   TC : O(n x m) x log(m x n) + O(n x m x 4)
+             first part is for loop with set store and second is exploring dfs
+        SC : O(n x m) + O(n x m)
+  
 */
 
 
