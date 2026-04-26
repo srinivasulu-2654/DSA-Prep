@@ -5,6 +5,8 @@ https://leetcode.com/problems/surrounded-regions/description/
     -> so instead exploring all the inside things we have to explore only it's boundaries
     -> and then just traverse if vis[i][j] == 0 then do this grid[i][j] = 'X'
 
+    “Time complexity is O(mn) since each cell is visited once, and space is O(mn) due to visited array and recursion stack.”
+
 */
 
 class Solution {
