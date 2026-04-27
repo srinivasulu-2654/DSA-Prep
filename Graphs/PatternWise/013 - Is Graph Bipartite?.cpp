@@ -3,6 +3,11 @@
   -> linear graph with no cycle always a Bipartite Graph
   -> Graph with even number of cycles is alwasys a - Bipartite Graph
   -> Graph with odd number of cycles is alwasys a - not Bipartite Graph
+  -> TC and SC : Same as the BFS of the graph
+
+  -> Main appraoch is :
+  -> if current node is not vis i mean color[node] == -1 then =>  if the u(parent node) is o color => fill all its adjacnet nodes with 1 color
+  -> if current node is visited and also color[it] == color[node] return false;
 */
 
 class Solution {
