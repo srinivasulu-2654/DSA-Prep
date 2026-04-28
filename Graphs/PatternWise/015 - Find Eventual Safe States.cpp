@@ -49,7 +49,8 @@ public:
         vector<int>vis(V,0);
         vector<int>check(V,0);
         vector<int>safeNodes;
-        
+
+      
         for(int i=0;i<V;i++)
         {
             if(!vis[i])
