@@ -4,7 +4,7 @@
     -> at first if the indegree[node] = 0 then push into the queue
     -> pop each node and check it's outdegree make them to indegree[node_outdegree] = -1;
     -> indegree array can make from the given edges matrix
-    -> 
+    ->  TC : O(V+E)
 */
 
 class Solution {
