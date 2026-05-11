@@ -3,6 +3,8 @@
   -> Steps for this :
       -> do simple bfs but instead vis take distance array with all infinity values
       -> make sure for each node it will be very less minimum value
+      -> Here why only queue like that answers will rasie just look for that?
+      -> why becuase we are getting the things like in queue the distance is already it will be in sorted order so that's why 
 */
 
 
